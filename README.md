@@ -9,8 +9,6 @@ This is a simple Node.js application that provides a Webhook service for managin
 - [Usage](#usage)
 - [API Endpoints](#api-endpoints)
 - [Webhook Execution](#webhook-execution)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Getting Started
 
@@ -24,7 +22,7 @@ This is a simple Node.js application that provides a Webhook service for managin
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/webhook-service.git
+   git clone https://github.com/sharma03r/Crego-task.git
    ```
 
 2. Install dependencies:
@@ -49,15 +47,63 @@ This is a simple Node.js application that provides a Webhook service for managin
  webhook-service/
  |-- models/
  | |-- Webhook.js
- |-- routes/
- |   |-- webhookRoutes.js
- |-- controllers/
- |   |-- webhookController.js
+ |-- webhookRoutes.js
+ |-- webhookController.js
  |-- webhookExecution.js
- |-- server.js
+ |-- index.js
  |-- routes.js
  |-- .gitignore
  |-- package.json
  |-- README.md
 
 ```
+
+- `models/`: Contains the MongoDB model for the Webhook.
+- `webhookExecution.js`: Manages the logic for triggering Webhooks.
+- `server.js`: Main entry point of the application.
+- `routes.js`: Connects API routes.
+- `.gitignore`: Specifies files and directories to be ignored by Git.
+- `package.json`: Lists project dependencies and scripts.
+
+### Start the server
+
+1. Start the server
+   ```bash
+    node index.js
+   ```
+2. Use API endpoints to manage Webhook subscriptions.
+3. Trigger Webhook execution either by waiting for the cron job or manually triggering it.
+
+### API Endpoints
+
+### API Endpoints
+
+#### Create Webhook Subscription:
+
+- **Method:** `POST`
+- **URL:** `/webhooks`
+
+#### Update Webhook Subscription:
+
+- **Method:** `PATCH`
+- **URL:** `/webhooks/{id}/`
+
+#### Delete Webhook Subscription:
+
+- **Method:** `DELETE`
+- **URL:** `/webhooks/{id}/`
+
+#### List All Webhook Subscriptions:
+
+- **Method:** `GET`
+- **URL:** `/webhooks/`
+
+#### Get Single Webhook Subscription:
+
+- **Method:** `GET`
+- **URL:** `/webhooks/{id}/`
+
+### Webhook Execution
+
+- Webhook execution is scheduled using Node-Cron.
+- The cron job runs every minute and triggers Webhooks for the specified company ID.
