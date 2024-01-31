@@ -37,3 +37,27 @@ This is a simple Node.js application that provides a Webhook service for managin
 3. Start up MongoDB:
 
 - Ensure MongodDB service is running locally or update the string in `index.js`
+
+4. Start the server
+   ```bash
+   node index.js
+   ```
+
+### Project Structure
+
+```lua
+ webhook-service/
+ |-- models/
+ | |-- Webhook.js
+ |-- routes/
+ |   |-- webhookRoutes.js
+ |-- controllers/
+ |   |-- webhookController.js
+ |-- webhookExecution.js
+ |-- server.js
+ |-- routes.js
+ |-- .gitignore
+ |-- package.json
+ |-- README.md
+
+```
