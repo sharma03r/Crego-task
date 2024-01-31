@@ -26,3 +26,14 @@ This is a simple Node.js application that provides a Webhook service for managin
    ```bash
    git clone https://github.com/your-username/webhook-service.git
    ```
+
+2. Install dependencies:
+
+   ```bash
+   cd webhook-service
+   npm install
+   ```
+
+3. Start up MongoDB:
+
+- Ensure MongodDB service is running locally or update the string in `index.js`
